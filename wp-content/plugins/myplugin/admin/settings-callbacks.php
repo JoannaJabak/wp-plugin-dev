@@ -1,5 +1,14 @@
 <?php 
-require_once plugin_dir_path(__FILE__) . '../includes/core-functions.php';
+/* 
+The security_direct_file_call() function checks if the WordPress constant ABSPATH is defined. If it is not, that means the file is being called directly outside the WordPress and so, in that case, we abort by exiting the script. This technique prevents foul play and helps keep the plugin secure.
+*/
+
+//Exit if file is called directly
+if (!defined ('ABSPATH')) {
+
+    exit;
+
+}
 
 /* 
 The security_direct_file_call() function checks if the WordPress constant ABSPATH is defined. If it is not, that means the file is being called directly outside the WordPress and so, in that case, we abort by exiting the script. This technique prevents foul play and helps keep the plugin secure.
