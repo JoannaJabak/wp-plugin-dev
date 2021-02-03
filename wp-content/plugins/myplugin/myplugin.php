@@ -39,10 +39,9 @@ if (is_admin()) {
     // require_once '../admin/settings-page.php';
     //A better way of doing it is using the plugin_dir_path() function
     require_once plugin_dir_path( __FILE__ ) . 'admin/settings-page.php';
-
     require_once plugin_dir_path( __FILE__ ) . 'admin/settings-register.php';
-
     require_once plugin_dir_path( __FILE__ ) . 'admin/settings-callbacks.php';
+    require_once plugin_dir_path( __FILE__ ) . 'admin/settings-validate.php';
 }
 
 // Default values for the plugin settings

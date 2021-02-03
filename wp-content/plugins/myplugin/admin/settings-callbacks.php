@@ -1,16 +1,13 @@
 <?php 
+require_once plugin_dir_path(__FILE__) . '../includes/initialize.php';
+
+/* 
+The security_direct_file_call() function checks if the WordPress constant ABSPATH is defined. If it is not, that means the file is being called directly outside the WordPress and so, in that case, we abort by exiting the script. This technique prevents foul play and helps keep the plugin secure.
+*/
 
     /************************************************************
     *                  Callback Functions                       *
     ************************************************************/
-
-// Validate plugin settings
-function myplugin_callback_validate_options($input) {
-
-    //todo: add validation functionality
-    return $input;
-
-}
 
 //callback: login section
 function myplugin_callback_section_login() {
