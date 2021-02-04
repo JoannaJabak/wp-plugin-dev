@@ -4,6 +4,8 @@ Plugin Name: Customize Login Plugin
 Description: Customizes the login page
 Author: Joanna Douba-Jabak
 Version: 1.0
+Text Domain: myplugin
+Domain Path: /languages
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.txt
 */
@@ -37,6 +39,27 @@ if (!defined ('ABSPATH')) {
 
 }
 
+/***************************************************************************
+*                     Internationalization Feature                         *
+***************************************************************************/
+// load text domain
+// We load text domain to enable internationalization of the plugin 
+function myplugin_load_textdomain() {
+    
+    load_plugin_textdomain( 
+        //the plugin's text domain*
+        //*: should match the "Text Domain" specified in the file header, AND the name of the main plugin file AND the name of the main plugin folder
+        'myplugin', 
+        
+        //
+        false, 
+        // Path to the localization files
+        plugin_dir_path(__FILE__) . 'languages/');
+
+}
+
+add_action('plugins_loaded', 'myplugin_load_textdomain'); 
+
 // if admin area
 if (is_admin()) {
     require_once plugin_dir_path( __FILE__ ) . 'admin/admin-menu.php';
@@ -53,21 +76,26 @@ require_once plugin_dir_path( __FILE__ ) . ('includes/core-functions.php');
 // Default values for the plugin settings
 function myplugin_options_default() {
 
-    return [
+    $options = [
         // Default custom login logo url
         'custom_url'    => 'https://terabit.ca/',
         // Default custom title
-        'custom_title'  => 'Powered by Terabit',
+        // __() retrieves the translation of text
+        // esc_html__() retrieves the translation while also sanitizing the input
+        // 'myplugin' specifies the text domain
+        'custom_title'  => esc_html__('Powered by Terabit', 'myplugin'),
         // Default custom style setting
         'custom_style'  => 'disable',
         // Default custom message
-        'custom_message'=> '<p class="custom-message">Welcome to Terabit.ca</p>',
+        'custom_message'=> '<p class="custom-message">' . esc_html__( 'Welcome to Terabit.ca', 'myplugin' ) . '</p>',
         //Default custom footer message
-        'custom_footer' => 'Powered by Terabit',
+        'custom_footer' => esc_html__('Powered by Terabit', 'myplugin'),
         //Default custom toolbar setting
         'custom_toolbar'=> false,
         //Default custom color scheme for new users
         'custom_scheme' => 'default',
     ];
+
+    return $options;
 }
 

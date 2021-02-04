@@ -52,7 +52,7 @@ function myplugin_register_settings() {
         'myplugin_section_login',
 
     //  string $title,
-        'Customize Login Page',
+        esc_html__('Customize Login Page', 'myplugin'),
 
     //  callable $callback,
         'myplugin_callback_section_login',
@@ -83,7 +83,7 @@ function myplugin_register_settings() {
         'custom_url',
         // string   $title,
         // This parameter will be displayed next to the setting to
-        'Custom URL',
+        esc_html__('Custom URL', 'myplugin'),
         // callable $callback,
         // The name of the function with the markup to display the setting. MUST BE DEFINED LATER
         'myplugin_callback_field_text',
@@ -101,7 +101,7 @@ function myplugin_register_settings() {
             // field id, label
             // Facilitates writing the callback functions for the settings
             'id'    => 'custom_url', 
-            'label' => 'Custom URL for the login logo link'
+            'label' => esc_html__('Custom URL for the login logo link', 'myplugin'),
         ]
     );
 
@@ -110,7 +110,7 @@ function myplugin_register_settings() {
         // string   $id,
         'custom_title',
         // string   $title,
-        'Custom Title',
+        esc_html__('Custom Title', 'myplugin'),
         // callable $callback,
         'myplugin_callback_field_text',
         // string   $page,
@@ -118,7 +118,10 @@ function myplugin_register_settings() {
         // string   $section = 'default',
         'myplugin_section_login',
         // array $args = []
-		[ 'id' => 'custom_title', 'label' => 'Custom title attribute for the logo link' ]
+		[ 
+            'id' => 'custom_title', 
+            'label' => esc_html__('Custom title attribute for the logo link', 'myplugin') 
+        ]
 	);
 
     // Custom CSS field
@@ -126,7 +129,7 @@ function myplugin_register_settings() {
         // string   $id,
         'custom_style',
         // string   $title,
-        'Custom Style',
+        esc_html__('Custom Style', 'myplugin'),
         // callable $callback,
         'myplugin_callback_field_radio',
         // string   $page,
@@ -134,8 +137,10 @@ function myplugin_register_settings() {
         //string   $section = 'default',
         'myplugin_section_login',
         // array    $args = []
-        ['id' => 'custom_style', 
-        'label' => 'Custom CSS for the login screen']
+        [ 
+            'id' => 'custom_style', 
+            'label' => esc_html__('Custom CSS for the login screen', 'myplugin')
+        ]
     );
 
     // Custom Message field
@@ -143,7 +148,7 @@ function myplugin_register_settings() {
         // string   $id,
         'custom_message',
         // string   $title,
-        'Custom Message',
+        esc_html__('Custom Message', 'myplugin'),
         // callable $callback,
         'myplugin_callback_field_textarea',
         // string   $page,        
@@ -151,7 +156,10 @@ function myplugin_register_settings() {
         //string   $section = 'default',               
         'myplugin_section_login',
         // array    $args = []
-		[ 'id' => 'custom_message', 'label' => 'Custom text and/or markup' ]
+		[ 
+            'id' => 'custom_message', 
+            'label' => esc_html__('Custom text and/or markup', 'myplugin') 
+        ]
 	);    
 
      /************************************************************
@@ -162,7 +170,7 @@ function myplugin_register_settings() {
             'myplugin_section_admin',
     
         //  string $title,
-            'Customize Admin Area',
+            esc_html__('Customize Admin Area', 'myplugin'),
     
         //  callable $callback,
             'myplugin_callback_section_admin',
@@ -178,7 +186,7 @@ function myplugin_register_settings() {
         // string   $id,
         'custom_footer',
         // string   $title,
-        'Custom Footer',
+        esc_html__('Custom Footer', 'myplugin'),
         // callable $callback,
         'myplugin_callback_field_text',
         // string   $page,
@@ -186,14 +194,17 @@ function myplugin_register_settings() {
         //string   $section = 'default',
         'myplugin_section_admin',
         // array    $args = []
-		[ 'id' => 'custom_footer', 'label' => 'Custom footer text' ]
+		[ 
+            'id' => 'custom_footer', 
+            'label' => esc_html__('Custom footer text', 'myplugin'),
+        ]
 	);
 
 	add_settings_field(
         // string   $id,
         'custom_toolbar',
         // string   $title,
-        'Custom Toolbar',
+        esc_html__('Custom Toolbar', 'myplugin'),
         // callable $callback,
         'myplugin_callback_field_checkbox',
         // string   $page,
@@ -201,14 +212,17 @@ function myplugin_register_settings() {
         //string   $section = 'default',
         'myplugin_section_admin',
         // array    $args = []
-		[ 'id' => 'custom_toolbar', 'label' => 'Remove new post and comment links from the Toolbar' ]
+		[ 
+            'id' => 'custom_toolbar', 
+            'label' => esc_html__('Remove new post and comment links from the Toolbar', 'myplugin'),
+        ]
 	);
 
 	add_settings_field(
         // string   $id,
         'custom_scheme',
         // string   $title,
-        'Custom Scheme',
+        esc_html__('Custom Scheme', 'myplugin'),
         // callable $callback,
         'myplugin_callback_field_select',
         // string   $page,
@@ -216,7 +230,10 @@ function myplugin_register_settings() {
         //string   $section = 'default',
         'myplugin_section_admin',
         // array    $args = []
-		[ 'id' => 'custom_scheme', 'label' => 'Default color scheme for new users' ]
+		[ 
+            'id' => 'custom_scheme', 
+            'label' => esc_html__('Default color scheme for new users', 'myplugin'), 
+        ]
 	);
     
 }

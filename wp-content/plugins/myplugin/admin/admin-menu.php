@@ -31,10 +31,10 @@ function myplugin_add_sublevel_menu() {
         'options-general.php',
 
         // string   $page_title,
-        'My Plugin Settings',
+        esc_html__('My Plugin Settings', 'myplugin'),
 
         // string   $menu_title,
-        'My Plugin',
+        esc_html__('My Plugin', 'myplugin'),
         
         // string   $capability,
         'manage_options',
@@ -65,10 +65,10 @@ add_action('admin_menu', 'myplugin_add_sublevel_menu');
 // 	*/
 // 	add_menu_page(
 //         // string   $page_title,
-//         'Customize Login Settings',
+//         esc_html__('Customize Login Settings', 'myplugin'),
 
 //         // string   $menu_title,
-//         'Customize Login',
+//         esc_html__('Customize Login', 'myplugin'),
 
 //         // string   $capability, 
 //         'manage_options',

@@ -21,15 +21,14 @@ The security_direct_file_call() function checks if the WordPress constant ABSPAT
 //callback: login section
 function myplugin_callback_section_login() {
 
-    echo "<p>These settings enable you to customize the WP Login Screen.</p>";
+    echo "<p>" . esc_html__('These settings enable you to customize the WP Login Screen.', 'myplugin') ." </p>";
 }
 
 
 //callback: admin section
 function myplugin_callback_section_admin() {
 
-    echo "<p>These settings enable you to customize the WP Admin Area.</p>";
-}
+    echo "<p>" . esc_html__('These settings enable you to customize the WP WP Admin Area.', 'myplugin') ." </p>";}
 
 //callback: text field
 function myplugin_callback_field_text( $args ) {
@@ -88,8 +87,8 @@ function myplugin_callback_field_radio($args) {
 
     // Define an array that contains the radio options
     $radio_options = [
-                        'enable' => 'Enable custom styles',
-                        'disable' => 'Disable custom styles'
+                        'enable' => esc_html__('Enable custom styles', 'myplugin'),
+                        'disable' => esc_html__('Disable custom styles', 'myplugin')
                      ];
     
     // Loop through the array and check if the current radio option is selected using the checked() function, and display the markup for the different radio options
@@ -196,14 +195,14 @@ function myplugin_callback_field_select($args) {
 
     // Define an array that contains the select options
     $select_options = [
-                        'default' => 'Default',
-                        'light' => 'Light',
-                        'blue' => 'Blue',
-                        'coffee' => 'Coffee',
-                        'ectoplasm' => 'Ectoplasm',
-                        'midnight' => 'Midnight', 
-                        'ocean' => 'Ocean', 
-                        'sunrise' => 'Sunrise', 
+                        'default'   => esc_html__('Default', 'myplugin'),
+                        'light'     => esc_html__('Light', 'myplugin'),
+                        'blue'      => esc_html__('Blue', 'myplugin'),
+                        'coffee'    => esc_html__('Coffee', 'myplugin'),
+                        'ectoplasm' => esc_html__('Ectoplasm', 'myplugin'),
+                        'midnight'  => esc_html__('Midnight', 'myplugin'), 
+                        'ocean'     => esc_html__('Ocean', 'myplugin'), 
+                        'sunrise'   => esc_html__('Sunrise', 'myplugin'), 
                      ];
     
     // Output the markup which will appear on the settings page
