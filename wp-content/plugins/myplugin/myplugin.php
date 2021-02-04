@@ -99,3 +99,13 @@ function myplugin_options_default() {
     return $options;
 }
 
+// // remove options on uninstall
+// function myplugin_on_uninstall() {
+//     //check if the user is an admin, if sp then delete the plugin options
+//     if (! current_user_can('activate_plugins')) return;
+    
+//     delete_option ('myplugin_options');
+
+// }
+
+// register_uninstall_hook(__FILE__, 'myplugin_on_uninstall');
